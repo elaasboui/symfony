@@ -1,0 +1,34 @@
+{% extends 'front.html.twig' %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="custom-form-container">
+                {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+                
+                <div class="mb-3">
+                    {{ form_row(form.type, {'attr': {'class': 'form-control'}}) }}
+                </div>
+               
+                <div class="mb-3">
+                    {{ form_row(form.description, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(form.description) }}
+                </div>
+                <div class="mb-3">
+                    {{ form_row(form.envoyer, {'attr': {'class': 'btn btn-primary'}}) }}
+                </div>
+
+                {{ form_end(form) }}
+            </div>
+
+            <!-- Ajout du lien vers la liste des réclamations ajoutées -->
+            <div class="mt-3 text-center">
+                <a href="{{ path('list_Reclamation') }}" class="btn btn-secondary">Réclamations Ajoutées</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
